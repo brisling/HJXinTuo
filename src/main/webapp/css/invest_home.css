@@ -1,0 +1,269 @@
+/* CSS Document */
+.main_body_background {
+	width: 100%;
+	background-color: #f0f4f7;
+	padding-top: 30px;
+	min-height: 720px;
+	_height: 720px; 
+}
+
+.product_list {
+	width: 760px;
+	float: left;
+} 
+
+.product {
+	border: 1px solid #e6e6e6;
+  border-radius: 1px;
+	background-color:#FFFFFF;
+	width: 100%;
+	min-height: 218px;
+	margin-bottom: 12px;
+}
+
+.product_profit_container {
+	width: 192px;
+	background-color: rgb(240, 244, 247);
+	height: 218px;
+	text-align: center;
+	background: url(../images/product/invest-pics.png) no-repeat 0 0;
+	margin-right: 25px;
+	background-position: -600px 0px;
+	float: left;
+	color: #FFFFFF;
+}
+.product_for_new_user {
+	display: block;
+	font-size: 19px;
+	margin-top: 50px;
+	text-align: right;
+	margin-right: 10px;
+	height: 1px;
+}
+
+.product_profit_rate {
+	font-size: 49px;
+	font-weight: 500;
+	height: 60px;
+	margin-top: 25px;
+	color: #FFFFFF;
+}
+
+.product_profit_text {
+	height: 30px;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.product_title_container, .product_invest_info_container, .product_invest_button_container {
+	width: 540px;
+	float: left;
+}
+
+.product_invest_info_container {
+	padding-bottom: 10px;
+}
+
+.product_title_icon {
+	width: 36px;
+	height: 36px;
+	background: url(../images/product/invest-pics.png) no-repeat;
+	background-position: -160px -238px;
+	float:left;
+	margin-top: 22px;
+}
+
+.product_title {
+	font-size: 20px;
+	color: #333333;
+	line-height: 80px;
+	margin-left: 15px;
+	float:left;
+}
+
+.product_title a {
+	color: #333;
+}
+
+.invest_info_col {
+	float: left;
+	min-width: 90px;
+	min-height: 50px;
+}
+
+.invest_info_col_seperator {
+	width: 20px;
+	height: 60px;
+	border-left: 1px solid #e6e6e6;
+	float: left;
+	margin-left: 10px;
+}
+
+.invest_info_col .title {
+	margin-bottom: 10px;
+}
+
+.invest_info_col .value {
+	font-size: 20px;
+	color: #333333;
+	font-weight: normal;
+}
+
+.product_invest_button_container {
+	border-top: 1px solid #e6e6e6;
+	padding-top: 3px;
+}
+
+.invest_days_container {
+	margin: 6px 0px 4px 0px;
+	color: #808080;
+	width: 160px;
+	float: left;
+}
+
+.invest_days_icon {
+	width: 46px;
+	height: 46px;
+	background: url(../images/product/icon-calendar.png) no-repeat 0 0;
+	float:left;
+	margin-right: 5px;
+}
+
+.invest_days_title {
+	font-size:16px;
+	height:22px;
+	line-height: 16px;
+	margin-top:4px;
+	float:none;
+}
+
+.invest_days {
+	font-size: 21px;
+	line-height: 21px;
+}
+
+.invest_button {
+	float: left;
+	margin-top: 15px;
+}
+
+a.invest {
+	height: 40px;
+	width: 100px;
+	line-height: 40px;
+	font-size: 16px;
+	margin-left: 250px;
+	padding: 0px;
+	text-decoration: none;
+  color: #fff;
+	background-color:red;
+}
+
+a:hover.invest {
+    background-color: #ff7167;
+}
+
+.product .an {
+	background-position: -400px 0px;
+}
+
+.product_title_container .an {
+	background-position: -107px -237px;
+}
+
+.product .zhi {
+	background-position: 0px 0px;
+}
+
+.product_title_container .zhi {
+	background-position: 0px -237px;
+}
+
+.product .jie {
+	background-position: -200px 0px;
+}
+
+.product_title_container .jie {
+	background-position: -52px -237px;
+}
+
+.invest_home_right {
+    width: 335px;
+    margin: 0px;
+    margin-left: 15px;
+    float: left;
+}
+
+.invest_home_right .header {
+    border-bottom: 1px solid #e7eaec;
+    margin: 3px 3px 5px;
+    line-height: 30px;
+		font-size: 20px;
+		padding-left: 20px;
+		padding-top: 15px;
+		height: 45px;
+}
+
+.app_info {
+	background-color: #fff;
+	border: 1px solid #e6e6e6;
+	height: 320px;
+}
+
+.app_info .header .title {
+	float: left;
+	border-right: 1px solid #e6e6e6;
+	padding-right: 20px;
+}
+
+.app_info .header .more_text {
+	float: left;
+	margin-left: 20px;
+	font-size: 14px;
+	color: #b2b2b2;
+}
+
+.app_info_img {
+    width: 100%;
+    height: 190px;
+    background: url(../images/product/invest-pics.png) no-repeat 0 0;
+    background-position: 0px -414px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.invest_overview {
+	height: 420px;
+	background-color: #fff;
+	border: 1px solid #e6e6e6;
+	margin-top: 20px;
+}
+
+.invest_overview .bgimg {
+    width: 335px;
+    height: 58px;
+    background: url(../images/product/invest-pics.png) no-repeat;
+    background-position: 20px -282px;
+}
+
+.notice {
+	height: 320px;
+	background-color: #fff;
+	border: 1px solid #e6e6e6;
+	margin-top: 20px;
+}
+
+.notice .items {
+	padding: 20px 0px 0px 20px;
+}
+
+.notice .items .item {
+	height: 30px;
+	line-height: 30px;
+}
+
+.notice .items .item a {
+	color: #78868b;
+}
+
+

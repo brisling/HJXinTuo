@@ -1,0 +1,398 @@
+body {
+  font-family: 'Microsoft YaHei';
+  font-size: 14px;
+  margin:0px;
+  padding:0px;
+	color: #333;
+}
+
+a {
+  text-decoration: none;
+	color: #0088cc;
+}
+
+li {
+	list-style: none;
+	vertical-align: top;
+	line-height: 20px;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+}
+
+/* button */
+.button {
+    display: inline-block;
+    color: #fff;
+    border-radius: 5px;
+    line-height: 36px;
+    text-align: center;
+    padding: 0px 30px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none;
+		font-family: 'Microsoft YaHei';
+}
+
+/* style for top bar */
+.top_bar {
+    background: #222;
+    height: 30px;
+    color: #b2b2b2;
+    width:100%;
+}
+
+.top_bar a {
+    color: #fff;
+  text-decoration: none;
+}
+
+.top_bar ul{
+  float: left;
+    height: 28px;
+    text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+    margin-left: 20px;
+    padding-top: 2px;
+  display:block;
+  list-style-type: none;
+}
+
+.top_bar li{
+  float: left;
+    height: 28px;
+  width: 28px;
+  display:block;
+  list-style-type: none;
+  position: relative;
+}
+
+.top_bar_sina_btn, .top_bar_qq_btn, .top_bar_weixin_btn, .top_bar_app_btn {
+    height: 28px;
+    width: 28px;
+    display: block;
+    position: relative;
+    left: 0;
+    background: none;
+}
+.ban2 {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    line-height: 25px;
+    background: url(../images/header/header-icons.png) no-repeat -144px -32px;
+    text-align: center;
+}
+
+.ban2_1_0 {
+    background-position: -90px -30px;
+    cursor: pointer;
+}
+
+.ban2_3_0 {
+    background-position: 0px -30px;
+    cursor: pointer;
+}
+
+.ban2_4_0 {
+    background-position: -40px -31px;
+    cursor: pointer;
+}
+
+.ban2_5_0 {
+    background-position: -186px -32px;
+    cursor: pointer;
+}
+
+.top_bar_btn_seperator {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+em {
+    font-style: italic;
+}
+
+.top_bar_weixin_btn_box, .top_bar_app_btn_box, .top_bar_sina_btn_box, .top_bar_qq_btn_box {
+    padding: 10px 15px;
+    position: absolute;
+    width: 130px;
+    left: -69px;
+    top: 36px;
+    background: #fff;
+    border: 1px solid #c5c5c5;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    display: none;
+    -webkit-box-shadow: 0 3px 6px #8a8a8a;
+    -moz-box-shadow: 0 3px 6px #8a8a8a;
+  z-index: 999;
+}
+
+.top_bar_btn_box_arrow {
+    position: absolute;
+    height: 13px;
+    width: 20px;
+    background: url(../images/header/n_sm_sp.png) no-repeat -91px 0px;
+    top: -12px;
+    left: 70px;
+}
+
+.top_bar_btn_box_img {
+  width: 130px;
+  height: 130px;
+}
+
+.top_bar_btn_box_title {
+  font-size: 16px;
+  color: #444;
+    line-height: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.pic_box {
+  width: 130px;
+  height: 130px;
+}
+
+.sm_top_tel {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 16px;
+  margin-bottom: 0px;
+  margin-top:0px;
+    overflow: hidden;
+    color: #fff;
+}
+
+.top_bar p {
+  display: block;
+}
+
+.sm_top_help {
+    float: right;
+    display: block;
+    margin: 0px 0px 0px 0px;
+    height: 30px;
+    line-height: 30px;
+    padding-right: 0px;
+}
+.clear {
+    zoom: 1;
+}
+
+/* style for main navigator */
+.nav {
+    width: 100%;
+    height: 70px;
+    /*position: absolute;*/
+    top: 30px;
+    right: 0px;
+    z-index: 2;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    background-color: #fff;
+    color: #ffffff;
+    text-align: center;
+}
+
+.container {
+  margin:auto;
+  width:1110px;
+}
+
+.nav .logo {
+    left: 0px;
+    height: 70px;
+    float: left;
+    width: 220px;
+    background: url(../images/common/51xintuo_logo.png) no-repeat 0 0;
+    text-indent: -20000px;
+    margin-top: 5px;
+}
+
+.nav_right {
+    width: 800px;
+    float: right;
+    margin-top: 25px;
+  height: 20px;
+}
+
+.nav ul {
+    margin-bottom: 20px;
+  margin-top: 0;
+    margin-left: 0;
+    list-style: none;
+  padding: 0;
+  line-height: 20px;
+}
+
+.nav ul li {
+    width: 110px;
+    float: right;
+    font-size: 14px;
+  list-style: none;
+  line-height: 20px;
+}
+
+.nav a {
+    color: #333333;
+  font-size: 14px;
+  text-decoration:none;
+}
+
+.nav a:hover {
+    color: red;
+}
+
+.nav_li_focus a {
+  color: red;
+}
+
+
+/* style for footer */
+.footer {
+  background-color: #222222;
+  color: #b2b2b2;
+  padding: 15px 0px;
+  height: 163px;
+}
+
+.footer_left {
+  float:left;
+}
+
+.footer_icons {
+  float: left;
+  width: 70%;
+  margin: 5px;
+  margin-top:25px;
+  padding: 5px;
+}
+
+.footer_icon_item {
+  float: left;
+  clear: none;
+  text-align: center;
+  width: 110px;
+  margin: 0px 12px;
+}
+
+.footer_nav {
+  float: left;
+  margin: 5px;
+  padding: 5px;
+  color: #b2b2b2;
+}
+
+.footer_nav_item {
+  float: left;
+  clear: none;
+  text-align: center;
+  width: 80px;
+  margin: 0px 5px;
+}
+
+.footer_nav a {
+  text-decoration: none;
+  color: #b2b2b2;
+}
+
+.footer_nav a:hover {
+  color:#FF473A;
+}
+
+.footer_nav_splitter {
+  float: left;
+  border-left: 1px solid #e6e6e6;
+  width: 1px;
+}
+
+.clear {
+  clear:both;
+}
+
+.footer_copyright {
+  float: left;
+  clear: left;
+  margin: 9px 0px;
+  padding-left: 15px;
+}
+
+.footer_tel {
+  float: right;
+  width: 25%;
+  padding-top: 5px;
+}
+
+.footer_phone_img {
+  width: 56px;
+  height: 55px;
+  float: left;
+  background: url(../images/common/common-icons.png) no-repeat;
+  background-position: 1px -44px;
+  margin-right: 15px;
+}
+
+.footer_support_phone {
+  height: 55px;
+}
+
+.footer_phone {
+  font-size: 23px;
+  margin-bottom: 9px;
+  margin-top: 5px;
+}
+
+/* style for error tip */
+span.error_tip {
+  height: 24px;
+  color: red;
+  font-size: 12px;
+}
+
+/* style for input */
+input.default {
+  border: 1px solid;
+  border-color: #e6e6e6;
+  height: 15px;
+  padding: 9px 27px 9px 10px;
+  background-color: #FFFFFF;
+  background-position: right;
+  -webkit-box-shadow: none;
+  outline: none;
+  border-radius: 0px;
+  font-size: 13px;
+  position: relative;
+  right: 10px;
+  width: 190px;
+  float: left;
+}
+
+/* verify code */
+input.verify_code {
+  width: 113px;
+}
+
+.verify_code_img {
+    width: 70px;
+  height: 35px;
+  border: 1px;
+  border-color: black;
+  margin-left: -6px;
+  cursor: pointer;
+}
+
+input.check_protocol {
+  width: 12px;
+}
