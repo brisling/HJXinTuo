@@ -1,0 +1,268 @@
+.main_body_background {
+  background-color: #f0f4f7;
+  font-family: 'Microsoft Yahei';
+  min-width: 1110px;
+  min-height: 200px;
+}
+
+.home_nav {
+  background-color: #f9f9f9;
+  width: 260px;
+  border: 1px;
+  border-color: #e6e6e6;
+  border-style: solid;
+  padding-bottom: 40px;
+  min-height: 715px;
+  float:left;
+}
+
+.home_nav_1 {
+  height: 60px;
+  padding-left: 36px;
+  font-size: 14px;
+  color: #666666;
+  line-height: 60px;
+}
+
+.home_nav_2 {
+  padding-left: 36px;
+  padding-top: 0px;
+  padding-bottom: 13px;
+}
+
+.home_nav_2_1 {
+  font-size: 16px;
+  color: #808080;
+  margin: 0px 0px;
+  line-height: 16px;
+}
+
+.home_nav_2_2 {
+  margin: 0px 0px;
+  padding: 18px 0px;
+  font-size: 32px;
+  color: #333333;
+  line-height: 34px;
+}
+
+.button_recharge, .button_withdraw {
+  padding: 0 20px;
+  font-size: 15px;
+  background-color: #ff473a;
+  margin-right: 17px;
+  
+}
+
+.home_nav_3 {
+  padding: 0px 0px;
+  border-top: 1px;
+  border-top-color: #e6e6e6;
+  border-top-style: solid;
+}
+
+.home_nav_3_list {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 0 10px 25px;
+  margin-bottom: 0;
+  margin-left: 0;
+  list-style: none;
+}
+
+.home_nav_3_header {
+  padding-left: 21px;
+  padding-top: 36px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  color: #666666;
+}
+
+.home_nav_3_item, .home_nav_3_header {
+  list-style: none;
+  vertical-align: top;
+  line-height: 20px;
+}
+
+.home_nav_3_item {
+  padding-left: 65px;
+  display: block;
+}
+
+a.home_nav_3_title {
+  color: #666666;
+  font-size: 14px;
+  height: 30px;
+  padding-top:3px;
+  padding-bottom:3px;
+  text-align: left;
+  line-height: 30px;
+}
+
+.home_nav_3_icon {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-top: 5px;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.home_nav_3_icon_1 {
+  background: url(../images/account/icons-ic.png) no-repeat;
+  background-position: 0px -20px;
+}
+
+.home_nav_3_icon_3 {
+  background: url(../images/account/icons-ic.png) no-repeat;
+  background-position: -40px -20px;
+}
+
+.home_nav_3_icon_6 {
+  background: url(../images/account/icons-ic.png) no-repeat;
+  background-position: -100px -20px;
+}
+
+.home_nav_3_icon_7 {
+  background: url(../images/account/icons-ic.png) no-repeat;
+  background-position: -120px -20px;
+}
+
+.home_nav_3_icon_8 {
+  background: url(../images/account/icons-ic.png) no-repeat;
+  background-position: -140px -20px;
+}
+
+.home_nav_3_icon_1_w {
+  background: url(../images/account/icons-ic.png) no-repeat;
+  background-position: 0px 0px;
+}
+
+.right_area_container {
+  width: 806px;
+  background-color: #ffffff;
+  float: left;
+  border: 1px;
+  border-color: #e6e6e6;
+  border-style: solid;
+  min-height: 725px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+}
+
+.accountView_top {
+  height: 194px;
+  border-bottom: 1px;
+  border-bottom-color: #e6e6e6;
+  border-bottom-style: solid;
+}
+
+.accountView_top_left {
+  width: 308px;
+  height: 110px;
+  float: left;
+  padding-left: 78px;
+  padding-top: 60px;
+}
+
+.accountView_title {
+  font-size:14px;
+}
+
+.accountView_number {
+  font-size:38px;
+  color:#808080;
+}
+
+.accountView_top_left_notice {
+  width: 15px;
+  padding-left: 50px;
+  margin-top: -72px;
+}
+
+.account-overview-box {
+  padding: 10px 15px;
+  position: relative;
+  width: 230px;
+  height: 20px;
+  left: -127px;
+  top: 17px;
+  display: none;
+  border: 1px solid #c5c5c5;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 6px #8a8a8a;
+  background: #fff;
+  color: #444;
+  font-size: 15px;
+  padding-top: 10px;
+}
+
+.account-overview-box .arrow3 {
+  position: absolute;
+  height: 13px;
+  width: 20px;
+  background: url(../images/other/n_sm_sp.png) no-repeat -91px 0px;
+  top: -12px;
+  left: 124px;
+}
+
+.account-overview-box .arrow3-box {
+  margin-left: 15px;
+}
+
+.accountView_top_right {
+  padding-left: 78px;
+  padding-top: 57px;
+  height: 110px;
+  float: left;
+  width: 340px;
+}
+
+.accountView_top_right_notice2 {
+  width: 15px;
+  padding-left: 78px;
+  margin-top: -72px;
+}
+
+.accountView_top_right_notice2 .account-overview-box2 {
+  padding: 10px 15px;
+  position: relative;
+  width: 305px;
+  height: 23px;
+  right: 163px;
+  top: 17px;
+  display: none;
+  border: 1px solid #c5c5c5;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 6px #8a8a8a;
+  background: #fff;
+  color: #444;
+  font-size: 15px;
+  padding-top: 10px;
+}
+
+.account-overview-box2 .arrow4 {
+  position: absolute;
+  height: 13px;
+  width: 20px;
+  background: url(../images/other/n_sm_sp.png) no-repeat -91px 0px;
+  top: -12px;
+  left: 160px;
+}
+
+.accountView_top_right_notice2 .account-overview-box2 {
+  padding: 10px 15px;
+  position: relative;
+  width: 305px;
+  height: 23px;
+  right: 163px;
+  top: 17px;
+  display: none;
+  border: 1px solid #c5c5c5;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 6px #8a8a8a;
+  background: #fff;
+  color: #444;
+  font-size: 15px;
+  padding-top: 10px;
+}
