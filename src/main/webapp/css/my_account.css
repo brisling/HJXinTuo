@@ -266,3 +266,32 @@ a.home_nav_3_title {
   font-size: 15px;
   padding-top: 10px;
 }
+
+.invest_record {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0px 0px;
+  text-align: left;
+}
+
+.invest_record_table {
+  max-width: 100%;
+  background-color: transparent;
+  border-color: gray;
+  border-width: 1px;
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+.invest_record_thead {
+  background-color: #f9f9f9;
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.invest_record_table th, .invest_record_table td {
+  padding: 8px;
+  line-height: 20px;
+}
+  
