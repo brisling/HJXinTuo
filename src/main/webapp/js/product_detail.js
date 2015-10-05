@@ -47,7 +47,19 @@ $(document).ready(function () {
 		}
 		var rate = parseFloat($("#rate").html());
 		var profit = invest_amount * rate / 100;
+		profit = profit.toFixed(2);
 		$("#invest_profile_tips").html("预期获得收益："+profit+"元");
 	}
+	
+	// 提交购买订单
+	$("#invest_now").click(function() {
+		// submit form
+		$('#invest_form').ajaxSubmit(function(data) {
+			alert(data.message);
+			window.location.href = data.redirectUrl;
+		});
+		
+		return false;
+	});
 	
 });

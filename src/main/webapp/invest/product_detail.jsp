@@ -67,13 +67,13 @@
 				<div class="product_main_info_right_row">
 					可用余额&nbsp;&nbsp;&nbsp;&nbsp;
 					<!-- unlogin user -->
-					<c:if test="${sessionScope.isLogin != 1}"> 
+					<c:if test="${sessionScope.user == null}"> 
 						<a href="${pageContext.request.contextPath}/login">登录查看</a>
 					</c:if>
 					<!-- login user -->
-					<c:if test="${sessionScope.isLogin == 1}"> 
-						<span id="userAmount">${user.acount}元</span>&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="${pageContext.request.contextPath}/account/recharge" target="_blank">充值</a>
+					<c:if test="${sessionScope.user != null}"> 
+						<span id="userAmount"><fmt:formatNumber maxFractionDigits="2" value="${account.balance}" />元</span>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="${pageContext.request.contextPath}/account">充值</a>
 					</c:if>
 				</div>
 				<div class="product_main_info_right_row">
@@ -82,20 +82,21 @@
 				<div class="product_main_info_right_row">
 					还款方式 &nbsp;&nbsp;&nbsp;&nbsp; <span id="userAmount">到期一次性分配本金和收益</span>
 				</div>
-				<form action="">
+				<form action="${pageContext.request.contextPath}/invest/buy" id="invest_form">
 					<div class="invest_amount_container">
 						<div id="sub_button" class="sub_amount_button">-</div>
-						<input id="invest_amount" class="invest_amount_input" onkeyup="" name="investAmountButton" value="1000" type="text">
+						<input id="invest_amount" class="invest_amount_input"  name="investAmount" value="1000" type="text">
 						<div id="plus_button" class="plus_amount_button">+</div>
 						<div class="clear"></div>
 					</div>
-					<a class="invest_now_button" onclick="" href="">开始投资</a>
+					<a class="invest_now_button" id="invest_now" href="">开始投资</a>
 					<div class="clear"></div>
 					<div><span id="invest_profile_tips">预期获得的收益：0.41元</span></div>
 					<div class="check_protocol_container">
-						<input id="checkbox_protocol" type="checkbox"  checked="">我已经阅读并同意
+						<input id="checkbox_protocol" type="checkbox"  checked="checked">我已经阅读并同意
 						<a target="_blank" href="">《信托收益权转让协议》</a>
 					</div>
+					<input name="productId" value="${product.id}" type="hidden">
 				</form>
 			</div>
 			<div class="clear"></div>

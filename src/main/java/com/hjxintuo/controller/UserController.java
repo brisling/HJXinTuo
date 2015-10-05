@@ -13,13 +13,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.hjxintuo.dao.AccountDAO;
 import com.hjxintuo.dao.UserDAO;
+import com.hjxintuo.model.Account;
 import com.hjxintuo.model.User;
 
 @Controller  
 public class UserController {
 	private Logger log = Logger.getLogger(UserController.class);
 	private UserDAO userDao = new UserDAO();
+	private AccountDAO accountDao = new AccountDAO();
 	private final String REGISTER_PHONE = "registerPhone";
 	
 	@RequestMapping({"/login"})
@@ -45,7 +48,7 @@ public class UserController {
 		if (user == null) {
 			data.put("status", 1);
 			data.put("redirectUrl", request.getContextPath()+"/login/");
-			data.put("message", "ÓÃ»§Ãû»òÃÜÂë´íÎó");
+			data.put("message", "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		} else {
 			session.setAttribute("user", user);
 			data.put("status", 0);
@@ -63,7 +66,7 @@ public class UserController {
 	}
 	
 	@RequestMapping({"/account"})
-	public String account(HttpSession session) {
+	public String account(HttpSession session, ModelMap model) {
 		log.info("/account");
 		
 		User user = (User)session.getAttribute("user"); 
@@ -73,7 +76,30 @@ public class UserController {
 		}
 		
 		log.info("hello, " + user.getUserName() );
+		
+		Account account = accountDao.getAccountForUser(user.getId());
+		model.put("account", account);
+		
 		return "account/my_account";
+	}
+	
+	@RequestMapping({"/recharge"})
+	@ResponseBody
+	public Map<String, Object> recharge(HttpSession session, HttpServletRequest request) {
+		
+		Map<String, Object> data = new HashMap<String, Object>();
+		
+		User user = (User)session.getAttribute("user"); 
+		if (user == null) {
+			data.put("msg", "please login again !");
+			data.put("redirectUrl", request.getContextPath()+"/login/");
+			return data;
+		}
+		
+		accountDao.recharge(user.getId(), 5000);
+		data.put("msg", "ã€è¯•ç”¨ç‰ˆã€‘æˆåŠŸå……å€¼5000å…ƒ");
+		data.put("redirectUrl", request.getContextPath()+"/account/");
+		return data;
 	}
 	
 	@RequestMapping({"/register"})
@@ -137,7 +163,7 @@ public class UserController {
 		String userName = (String)session.getAttribute(REGISTER_PHONE);
 		if (userName == null || userDao.isUserExisting(userName)) {
 			data.put("status", 0);
-			data.put("message", "ÊÖ»úºÅÒÑ×¢²á£¬ÇëÊ¹ÓÃÆäËüºÅÂë");
+			data.put("message", "ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½á£¬ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			data.put("redirectUrl", request.getContextPath()+"/register/");
 			return data;
 		}
@@ -148,9 +174,14 @@ public class UserController {
 		user.setPassword(passwordMD5);
 		userDao.create(user);
 		
+		// get user id from database;
+		user = userDao.getUserByName(userName);
 		session.setAttribute("user", user);
 		
-		// ·ÀÖ¹Ë¢ĞÂÒ³ÃæÖØÈë
+		// open account for user
+		accountDao.openAccountForUser( user.getId() );
+		
+		// ï¿½ï¿½Ö¹Ë¢ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		session.removeAttribute(REGISTER_PHONE);
 		
 		data.put("status", 0);

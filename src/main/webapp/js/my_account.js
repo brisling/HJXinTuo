@@ -25,7 +25,17 @@ $(document).ready(function () {
   );
   
   $("#rechargeButton").click(function(){
-    
+	  var href = $(this).attr("href");
+	  $.ajax({
+		   type: "POST",
+		   url: href,
+		   success: function(data){
+		     alert(data.msg);
+		     window.location.href = data.redirectUrl;
+		   }
+		});
+	  
+	  return false;
   });
   
   
