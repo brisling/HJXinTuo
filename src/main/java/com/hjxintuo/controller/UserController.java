@@ -1,6 +1,7 @@
 package com.hjxintuo.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,16 +15,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hjxintuo.dao.AccountDAO;
+import com.hjxintuo.dao.InvestRecordDAO;
 import com.hjxintuo.dao.UserDAO;
 import com.hjxintuo.model.Account;
+import com.hjxintuo.model.InvestRecord;
 import com.hjxintuo.model.User;
 
 @Controller  
 public class UserController {
 	private Logger log = Logger.getLogger(UserController.class);
+	private final String REGISTER_PHONE = "registerPhone";
+	
 	private UserDAO userDao = new UserDAO();
 	private AccountDAO accountDao = new AccountDAO();
-	private final String REGISTER_PHONE = "registerPhone";
+	private InvestRecordDAO investRecordDao = new InvestRecordDAO();
 	
 	@RequestMapping({"/login"})
 	public String login(ModelMap model) {
@@ -48,7 +53,7 @@ public class UserController {
 		if (user == null) {
 			data.put("status", 1);
 			data.put("redirectUrl", request.getContextPath()+"/login/");
-			data.put("message", "�û������������");
+			data.put("message", "用户名或密码错误");
 		} else {
 			session.setAttribute("user", user);
 			data.put("status", 0);
@@ -65,7 +70,7 @@ public class UserController {
 		return "redirect:/login "; 
 	}
 	
-	@RequestMapping({"/account"})
+	@RequestMapping({"/account", "/account/home"})
 	public String account(HttpSession session, ModelMap model) {
 		log.info("/account");
 		
@@ -79,6 +84,9 @@ public class UserController {
 		
 		Account account = accountDao.getAccountForUser(user.getId());
 		model.put("account", account);
+		
+		List<InvestRecord> investRecords = investRecordDao.getInvestRecordForUser(user.getId());
+		model.put("investRecords", investRecords);
 		
 		return "account/my_account";
 	}
@@ -97,7 +105,7 @@ public class UserController {
 		}
 		
 		accountDao.recharge(user.getId(), 5000);
-		data.put("msg", "【试用版】成功充值5000元");
+		data.put("msg", "试用版，成功充值5000元");
 		data.put("redirectUrl", request.getContextPath()+"/account/");
 		return data;
 	}
@@ -163,7 +171,7 @@ public class UserController {
 		String userName = (String)session.getAttribute(REGISTER_PHONE);
 		if (userName == null || userDao.isUserExisting(userName)) {
 			data.put("status", 0);
-			data.put("message", "�ֻ�����ע�ᣬ��ʹ����������");
+			data.put("message", "该账户已被注册，请重新注册");
 			data.put("redirectUrl", request.getContextPath()+"/register/");
 			return data;
 		}
@@ -181,7 +189,7 @@ public class UserController {
 		// open account for user
 		accountDao.openAccountForUser( user.getId() );
 		
-		// ��ֹˢ��ҳ������
+		// 防止刷新重入
 		session.removeAttribute(REGISTER_PHONE);
 		
 		data.put("status", 0);

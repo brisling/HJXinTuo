@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/hjxintuo/controller/InvestController.java=UTF-8
+encoding//src/main/java/com/hjxintuo/controller/UserController.java=UTF-8
 encoding//src/main/webapp/account/login.jsp=UTF-8
 encoding//src/main/webapp/account/my_account.jsp=UTF-8
 encoding//src/main/webapp/account/register_step_1.jsp=UTF-8

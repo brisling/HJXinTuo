@@ -33,6 +33,7 @@ public class AccountDAO extends BaseDAO<Account> {
 			}
 			return accountList.get(0);
 		} catch(Exception e) {
+			session.getTransaction().rollback();
 			log.info(e.getMessage());
 			return null;
 		}

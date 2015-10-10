@@ -55,8 +55,15 @@ $(document).ready(function () {
 	$("#invest_now").click(function() {
 		// submit form
 		$('#invest_form').ajaxSubmit(function(data) {
-			alert(data.message);
-			window.location.href = data.redirectUrl;
+			if (data.status == 0) {
+				// success
+				alert(data.message);
+				window.location.href = data.redirectUrl;
+			} 
+			else if (data.status == 1)
+			{
+				alert(data.message);
+			}
 		});
 		
 		return false;

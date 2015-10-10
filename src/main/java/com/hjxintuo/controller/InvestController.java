@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hjxintuo.dao.AccountDAO;
+import com.hjxintuo.dao.InvestRecordDAO;
 import com.hjxintuo.dao.ProductDAO;
 import com.hjxintuo.model.Account;
 import com.hjxintuo.model.InvestRecord;
@@ -27,74 +28,11 @@ public class InvestController {
 	private Logger log = Logger.getLogger(InvestController.class);
 	private ProductDAO productDao = new ProductDAO();
 	private AccountDAO accountDao = new AccountDAO();
+	private InvestRecordDAO investRecordDao = new InvestRecordDAO();
 	
 	@RequestMapping({"/invest"})
 	public String investHome(ModelMap model) {
 		log.info("hello invest !");
-		
-		/*
-		// products
-		List<Product> productList = new ArrayList<Product>();
-		Product product = new Product();
-		product.setId(1);
-		product.setTitle("����ר��0069��");
-		product.setCategory(0);
-		product.setRateOfReturn(10.00f);
-		product.setDays(31);
-		product.setStatus(0);
-		product.setMinBuy(100f);
-		product.setBuyPeopleNum(5901);
-		product.setAlreadyBuyNum(4216500f);
-		productList.add(product);
-		
-		product = new Product();
-		product.setId(2);
-		product.setTitle("�����03��");
-		product.setCategory(1);
-		product.setRateOfReturn(9.50f);
-		product.setDays(81);
-		product.setStatus(0);
-		product.setMinBuy(2000f);
-		product.setBuyPeopleNum(1005);
-		product.setAlreadyBuyNum(342610f);
-		productList.add(product);
-		
-		product = new Product();
-		product.setId(3);
-		product.setTitle("�ž۽�0266��");
-		product.setCategory(2);
-		product.setRateOfReturn(8.50f);
-		product.setDays(356);
-		product.setStatus(0);
-		product.setMinBuy(1000f);
-		product.setBuyPeopleNum(2133);
-		product.setAlreadyBuyNum(1045600f);
-		productList.add(product);
-		
-		product = new Product();
-		product.setId(4);
-		product.setTitle("�ž۽�0265��");
-		product.setCategory(3);
-		product.setRateOfReturn(8.50f);
-		product.setDays(121);
-		product.setStatus(0);
-		product.setMinBuy(1000f);
-		product.setBuyPeopleNum(4201);
-		product.setAlreadyBuyNum(2342610f);
-		productList.add(product);
-		
-		product = new Product();
-		product.setId(5);
-		product.setTitle("�ž۽�0264��");
-		product.setCategory(2);
-		product.setRateOfReturn(8.50f);
-		product.setDays(91);
-		product.setStatus(0);
-		product.setMinBuy(1000f);
-		product.setBuyPeopleNum(201);
-		product.setAlreadyBuyNum(622120f);
-		productList.add(product);
-		*/
 		
 		List<Product> productList = productDao.list();
 		model.put("productList", productList);
@@ -128,12 +66,12 @@ public class InvestController {
 	
 	@RequestMapping("/invest/buy")
 	@ResponseBody
-	public Map<String, Object> doLogin(HttpServletRequest request, 
-									   HttpSession session, 
-									   @RequestParam("productId") 
-									   Integer productId,
-									   @RequestParam("investAmount")
-									   float investNum) {
+	public Map<String, Object> buy(HttpServletRequest request, 
+								   HttpSession session, 
+								   @RequestParam("productId") 
+								   Integer productId,
+								   @RequestParam("investAmount")
+								   float investNum) {
 		log.info("buy: " + productId + ", $" + investNum); 
 		
 		Map<String, Object> data = new HashMap<String, Object>();
@@ -141,28 +79,27 @@ public class InvestController {
 		User user = (User) session.getAttribute("user");
 		if (user == null) {
 			data.put("status", 1);
-			data.put("redirectUrl", request.getContextPath()+"/login/");
 			data.put("message", "请先登录");
+			log.info("请先登录");
 			return data;
 		} 
 		
-		Account account = accountDao.getAccountForUser(user.getId());
-		if (account.getBalance() < investNum) {
+		int ret = investRecordDao.buy(user.getId(), productId, investNum);
+		
+		if (0 == ret) {
+			data.put("message", "购买成功");
+			data.put("status", 0);
+			data.put("redirectUrl", request.getContextPath()+"/account/");
+			log.info("购买成功");
+		}else if (-2 == ret) {
 			data.put("status", 1);
-			data.put("redirectUrl", "");
-			data.put("message", "购买失败，余额不足");
-			return data;
+			data.put("message", "余额不足");
+			log.info("余额不足");
+		}else {
+			data.put("status", 1);
+			data.put("message", "购买失败，请重试");
+			log.info("购买失败");
 		}
-		
-		InvestRecord investRecord = new InvestRecord();
-		investRecord.setProductId(productId);
-		investRecord.setDateCreated(new Date());
-		investRecord.setInvestNum(investNum);
-		investRecord.setUserId(user.getId());
-		
-		data.put("message", "购买成功");
-		data.put("status", 0);
-		data.put("redirectUrl", request.getContextPath()+"/account/");
 		return data;
 	}
 }

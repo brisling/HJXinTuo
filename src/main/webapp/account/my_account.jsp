@@ -29,7 +29,7 @@
             </a>
           </li>
           <li>
-            <a id="" class="home_nav_3_item home_nav_3_title" href="">
+            <a id="" class="home_nav_3_item home_nav_3_title" href="/account/home">
               <div id="inviteFriendsIcon" class="home_nav_3_icon home_nav_3_icon_8"></div>站内通知
             </a>
           </li>
@@ -41,12 +41,12 @@
           </li>
           <li class="home_nav_3_header">理财分享</list>
           <li>
-            <a id="" class="home_nav_3_item home_nav_3_title" href="">
+            <a id="" class="home_nav_3_item home_nav_3_title" href="/account/home">
               <div id="inviteFriendsIcon" class="home_nav_3_icon home_nav_3_icon_6"></div>邀请好友
             </a>
           </li>
           <li>
-            <a id="" class="home_nav_3_item home_nav_3_title" href="">
+            <a id="" class="home_nav_3_item home_nav_3_title" href="/account/home">
               <div id="inviteFriendsIcon" class="home_nav_3_icon home_nav_3_icon_7"></div>邀请记录
             </a>
           </li>
@@ -97,12 +97,21 @@
             </tr>
           </thead>
           <tr>
-            <td>这是示例，如果是真的，你已经是世界首富了</th>
-            <td>200.00%</th>
-            <td>60,000</th>
-            <td>1832-08-08</th>
-            <td>2014-08-08</th>
+            <td>这是示例，如果是真的，你已经是世界首富了</td>
+            <td>200.00%</td>
+            <td>60,000</td>
+            <td>1832-08-08</td>
+            <td>2014-08-08</td>
           </tr>
+          <c:forEach items="${investRecords}" var="investRecord">
+          <tr>
+            <td>${investRecord.product.title}</td>
+            <td><fmt:formatNumber maxFractionDigits="2" minFractionDigits="2" value="${investRecord.product.rateOfReturn}" />%</td>
+            <td><fmt:formatNumber maxFractionDigits="2" value="${investRecord.investNum}" /></td>
+            <td>${investRecord.product.startDate}</td>
+            <td>${investRecord.product.endDate}</td>
+          </tr>
+          </c:forEach>
         </table>
       </div>
       

@@ -3,6 +3,7 @@
 <%@ include file="../common/header.jsp" %>
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/product_detail.css" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.form.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/product_detail.js"></script>
 
 <!-- main body -->
@@ -89,6 +90,7 @@
 						<div id="plus_button" class="plus_amount_button">+</div>
 						<div class="clear"></div>
 					</div>
+					<!-- submit button -->
 					<a class="invest_now_button" id="invest_now" href="">开始投资</a>
 					<div class="clear"></div>
 					<div><span id="invest_profile_tips">预期获得的收益：0.41元</span></div>
