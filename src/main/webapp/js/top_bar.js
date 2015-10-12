@@ -56,5 +56,6 @@ $(document).ready(function () {
 			$(".top_bar_qq_btn_box").hide();
 		}
 	);
+	
 
 });

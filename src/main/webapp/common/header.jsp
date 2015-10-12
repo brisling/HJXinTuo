@@ -134,13 +134,13 @@
 						<span class="main-link-text">我的账户</span>
 					</a>
 				</li>
-
+			  <!--  
 				<li id="claim">
 					<a class="main-link" href="${pageContext.request.contextPath}/debt">
 						<span class="main-link-text">转让市场</span>
 					</a>
 				</li>
-
+			  -->
 				<li id="invests">
 					<a class="main-link" href="${pageContext.request.contextPath}/invest">
 						<span class="main-link-text">我要投资</span>
