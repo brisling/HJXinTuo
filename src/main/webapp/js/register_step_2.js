@@ -54,35 +54,36 @@ $(document).ready(function () {
             }
         },
         
+        submitHandler: function() {
+    		// md5 password
+    		var password = $("#password").val();
+    		var md5 = hex_md5(password);
+    		$("#passwordMD5").val(md5);
+    		
+    		// clean up
+    		$("#password").val("");
+    		$("#passwordConfirm").val("");
+
+    		// submit form
+    		$('#register_form').ajaxSubmit(function(data) {
+    			if (data.status == 0) {
+    				// success
+    				window.location.href = data.redirectUrl;
+    			} 
+    			else if (data.status == 1)
+    			{
+    				// mismatch
+    				//alert("usrname or password mismatch !");
+    				$("#reg_err_password_confirm").html("<label>" + data.message + "</label>");
+    			}
+    		});
+    	},
+        
         // where to display error message
         errorPlacement: function (error, element) {
         	error.appendTo(element.parent().children(".error_tip"));
         }
 	});
-	
-	$("#submit_button").click(function() {
-		// md5 password
-		var password = $("#password").val();
-		var md5 = hex_md5(password);
-		$("#passwordMD5").val(md5);
-		
-		// clean up
-		$("#password").val("");
-		$("#passwordConfirm").val("");
-
-		// submit form
-		$('#register_form').ajaxSubmit(function(data) {
-			if (data.status == 0) {
-				// success
-				window.location.href = data.redirectUrl;
-			} 
-			else if (data.status == 1)
-			{
-				// mismatch
-				//alert("usrname or password mismatch !");
-				$("#reg_err_password_confirm").html("<label>" + data.message + "</label>");
-			}
-		});
-	});
     
+	$('#index').attr("class", "");
 })

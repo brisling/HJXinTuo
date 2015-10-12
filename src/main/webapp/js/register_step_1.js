@@ -65,4 +65,5 @@ $(document).ready(function () {
         $(this).attr("src", url);
 	});
 	
+	$('#index').attr("class", "");
 });

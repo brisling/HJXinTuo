@@ -45,4 +45,7 @@ $(document).ready(function () {
   });
   
   
+  $('#index').attr("class", "");
+  $('#acountHome').attr("class", "nav_li_focus");
+  
 });

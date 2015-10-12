@@ -35,6 +35,12 @@ public class HomeController {
 		return "home/home";
 	}
 	
+	@RequestMapping({"/aboutUs", "/debt", "/contactUs", "/hr", "/safe"})
+	public String comingSoon(HttpSession session, ModelMap model) {
+		log.info("coming soon !");
+		return "home/temp";
+	}
+	
 	@RequestMapping({"/test"})
 	public String test(HttpSession session, ModelMap model) {
 		log.info("test " + new Date().getTime());

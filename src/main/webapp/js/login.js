@@ -2,6 +2,8 @@
 
 $(document).ready(function () {
 
+	$('#login_form').ajaxForm();
+
 	$("#login_form").validate({
 		rules: {
             userName: {
@@ -25,35 +27,35 @@ $(document).ready(function () {
             }
         },
         
+        submitHandler: function() {
+    		// md5 password
+    		var password = $("#password").val();
+    		var md5 = hex_md5(password);
+    		$("#passwordMD5").val(md5);
+    		
+    		// clean up
+    		$("#password").val("");
+
+    		// submit form
+    		$('#login_form').ajaxSubmit(function(data) {
+    			if (data.status == 0) {
+    				// success
+    				window.location.href = data.redirectUrl;
+    			} 
+    			else if (data.status == 1)
+    			{
+    				// mismatch
+    				$("#login_error_tip").html("<label>" + data.message + "</label>");
+    			}
+    		});
+        },
+        
         // where to display error message
         errorPlacement: function (error, element) {
         	 error.appendTo(element.next(".error_tip"));
         }
 	});
 	
-	$("#submit_button").click(function() {
-		// md5 password
-		var password = $("#password").val();
-		var md5 = hex_md5(password);
-		$("#passwordMD5").val(md5);
-		
-		// clean up
-		$("#password").val("");
-
-		// submit form
-		$('#login_form').ajaxSubmit(function(data) {
-			if (data.status == 0) {
-				// success
-				window.location.href = data.redirectUrl;
-			} 
-			else if (data.status == 1)
-			{
-				// mismatch
-				//alert("usrname or password mismatch !");
-				$("#login_error_tip").html("<label>" + data.message + "</label>");
-			}
-		});
-	});
 	
 	$("#userName").focus(function () {
 		$("#login_error_tip").html("");
@@ -63,4 +65,5 @@ $(document).ready(function () {
 		$("#login_error_tip").html("");
 	});
 	
+	$('#index').attr("class", "");
 });

@@ -21,11 +21,11 @@
       <div class="footer_nav">
         <div class="footer_nav_item"><a href="${pageContext.request.contextPath}/aboutUs">关于我们</a></div>
         <div class="footer_nav_splitter">&nbsp;</div>
-        <div class="footer_nav_item"><a href="">联系我们</a></div>
+        <div class="footer_nav_item"><a href="${pageContext.request.contextPath}/contactUs">联系我们</a></div>
         <div class="footer_nav_splitter">&nbsp;</div>
-        <div class="footer_nav_item"><a href="">招贤纳士</a></div>
+        <div class="footer_nav_item"><a href="${pageContext.request.contextPath}/hr">招贤纳士</a></div>
         <div class="footer_nav_splitter">&nbsp;</div>
-        <div class="footer_nav_item"><a href="">安全保障</a></div>
+        <div class="footer_nav_item"><a href="${pageContext.request.contextPath}/safe">安全保障</a></div>
       </div>
       <!-- copyright -->
       <div class="footer_copyright">

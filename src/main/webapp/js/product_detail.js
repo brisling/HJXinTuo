@@ -69,4 +69,8 @@ $(document).ready(function () {
 		return false;
 	});
 	
+	// 设置当前导航项的颜色
+	$('#index').attr("class", "");
+	$('#invests').attr("class", "nav_li_focus");
+	
 });

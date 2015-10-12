@@ -24,17 +24,17 @@
 		<div class="title">HJ信托&nbsp;&nbsp;稳健投资者的首选</div>
 		<div class="subtitle" style="color:#78868b">资产真实性已经公证机构证实</div>
 		<div class="item">
-			<div class="i1"><a href="/home/homeAboutUs" target="_blank"><img src="${pageContext.request.contextPath}/images/banner/icon-profit.png" /></a></div>
+			<div class="i1"><a href="${pageContext.request.contextPath}/aboutUs" target="_blank"><img src="${pageContext.request.contextPath}/images/banner/icon-profit.png" /></a></div>
 			<div class="i2">低门槛，高收益</div>
 			<div class="i3">1000元起投；收益与信托产品挂钩</div>
 		</div>
 		<div class="item">
-			<div class="i1"><a href="/home/homeAboutUs?type=c" target="_blank"><img src="${pageContext.request.contextPath}/images/banner/security.png" /></a></div>
+			<div class="i1"><a href="${pageContext.request.contextPath}/aboutUs" target="_blank"><img src="${pageContext.request.contextPath}/images/banner/security.png" /></a></div>
 			<div class="i2">保障措施</div>
 			<div class="i3">刚性兑付，收益安全；第三方托管，资金安全</div>
 		</div>
 		<div class="item">
-			<div class="i1"><img src="${pageContext.request.contextPath}/images/banner/convenient.png" /></div>
+			<div class="i1"><a href="${pageContext.request.contextPath}/aboutUs" target="_blank"><img src="${pageContext.request.contextPath}/images/banner/convenient.png" /></a></div>
 			<div class="i2">交易便捷、流动性强</div>
 			<div class="i3">产品期限多样化；已生息资产可转让</div>
 		</div>

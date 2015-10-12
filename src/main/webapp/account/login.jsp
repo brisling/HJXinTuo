@@ -28,7 +28,7 @@
         <div class="login_form_item">
           <label class="login_form_item_lable"><span class="error_tip">*</span>手机号：</label>
           <div class="login_form_item_control">
-            <input type="text" class="default" id="userName" name="userName" placeholder="请输入电话号码">
+            <input type="text" class="default" id="userName" name="userName" placeholder="请输入电话号码" autocomplete="off">
             <span class="error_tip" id="username_error_tip"></span>
             <span class="error_tip" id="login_error_tip"></span>
           </div>
@@ -37,13 +37,13 @@
         <div class="login_form_item">
           <label class="login_form_item_lable"><span class="error_tip">*</span>密&nbsp;&nbsp;&nbsp;码：</label>
           <div class="login_form_item_control">
-            <input type="password" class="default" id="password" name="password" placeholder="请输入密码">
-            <input type="hidden" id="passwordMD5" name="passwordMD5">
+            <input type="password" class="default" id="password" name="password" placeholder="请输入密码" autocomplete="off">
             <span class="error_tip"></span>
+            <input type="hidden" id="passwordMD5" name="passwordMD5">
           </div>
         </div>
         <!-- submit button -->
-        <input type="button" id="submit_button" class="button login" value="登录">
+        <input type="submit" id="submit_button" class="button login" value="登录">
       </form>
 			<!-- help -->
 			<div class="forget_password">

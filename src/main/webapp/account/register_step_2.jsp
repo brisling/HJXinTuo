@@ -38,8 +38,8 @@
           <label class="login_form_item_lable login_form_item_lable2"><span class="error_tip">*</span>设置密码：</label>
           <div class="login_form_item_control">
             <input type="password" class="default" id="password" value="" name="password" placeholder="请输入密码" autocomplete="false">
-            <input type="hidden" class="default" id="passwordMD5" name="passwordMD5" value="" >
             <span id="reg_err_password" class="error_tip"></span>
+            <input type="hidden" class="default" id="passwordMD5" name="passwordMD5" value="" >
           </div>
         </div>
         <!-- confirm password -->
@@ -51,7 +51,7 @@
           </div>
         </div>
         <!-- submit button -->
-        <input type="button" class="button login" value="下一步" id="submit_button">
+        <input type="submit" class="button login" value="下一步" id="submit_button">
         <!-- login now -->
         <a href="${pageContext.request.contextPath}/login" class="login_form_login_now_link">已有账号？登录</a>
       </form>

@@ -13,4 +13,5 @@ $(document).ready(function () {
 		window.location.href = contextPath + "/";
 	});
 	
+	$('#index').attr("class", "");
 });

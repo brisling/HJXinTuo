@@ -1,10 +1,13 @@
 package com.hjxintuo.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
@@ -40,6 +43,7 @@ public class UserController {
 	@RequestMapping("/do_login")
 	@ResponseBody
 	public Map<String, Object> doLogin(HttpServletRequest request, 
+									   HttpServletResponse response, 
 									   HttpSession session, 
 									   @RequestParam("userName") 
 									   String userName, 
@@ -54,6 +58,12 @@ public class UserController {
 			data.put("status", 1);
 			data.put("redirectUrl", request.getContextPath()+"/login/");
 			data.put("message", "用户名或密码错误");
+			//try {
+			//	data.put("message", URLEncoder.encode("用户名或密码错误", "UTF-8"));
+			//}catch (UnsupportedEncodingException e) {
+			//	log.error(e.getMessage());
+			//}
+			response.setCharacterEncoding("UTF-8");
 		} else {
 			session.setAttribute("user", user);
 			data.put("status", 0);

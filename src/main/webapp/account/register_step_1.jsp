@@ -43,7 +43,7 @@
         <div class="login_form_item">
           <label class="login_form_item_lable">邀请码：</label>
           <div class="login_form_item_control">
-            <input type="text" class="default" id="invite_code" value="" name="inviteCode" placeholder="请填写邀请码(选填)" autocomplete="false">
+            <input type="text" class="default" id="invite_code" value="" name="inviteCode" placeholder="选填" autocomplete="false">
             <span id="reg_err_invite_code" class="error_tip"></span>
           </div>
         </div>
