@@ -12,8 +12,8 @@
 		<!-- 面包屑导航 -->
 		<div>
 			<ul class="breadcrumb">
-				<li><a href="../home/home.html">首页</a><span class="divider">&gt;</span></li>
-				<li><a href="invest_home.html">我要投资</a><span class="divider">&gt;</span></li>
+				<li><a href="${pageContext.request.contextPath}/home/">首页</a><span class="divider">&gt;</span></li>
+				<li><a href="${pageContext.request.contextPath}/invest/">我要投资</a><span class="divider">&gt;</span></li>
 				<li class="active">${product.title}</li>
 			</ul>
 		</div>
