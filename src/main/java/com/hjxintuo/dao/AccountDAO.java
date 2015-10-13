@@ -53,21 +53,4 @@ public class AccountDAO extends BaseDAO<Account> {
 			session.getTransaction().rollback();
 		}
 	}
-	
-	public void buy(Integer userId, Integer productId, float money) {
-		String hql = "update Account a set a.balance=a.balance-:money where a.userId=:userId";
-		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-		try {
-			session.beginTransaction();
-			Account account = session.get(Account.class, userId);
-			Query q = session.createQuery(hql);
-			q.setParameter("userId", userId);
-			q.setParameter("money", money);
-			q.executeUpdate();
-			hql = "";
-			session.getTransaction().commit();
-		} catch(Exception e) {
-			session.getTransaction().rollback();
-		}
-	}
 }

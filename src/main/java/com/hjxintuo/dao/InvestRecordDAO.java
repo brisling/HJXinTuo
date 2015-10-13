@@ -37,7 +37,7 @@ public class InvestRecordDAO extends BaseDAO<InvestRecord> {
 		try {
 			session.beginTransaction();
 			
-			// 扣除账户余额
+			// update account
 			String hql = "update Account a set a.balance=a.balance-:investNum " + 
 					 	 "where a.balance >= :investNum and a.userId=:userId";
 			Query q = session.createQuery(hql);
@@ -49,7 +49,7 @@ public class InvestRecordDAO extends BaseDAO<InvestRecord> {
 				return -2;
 			}
 			
-			// 生成订单
+			// insert a record
 			String sql = "insert into tb_invest_record(productId, userId, investNum, status) " +
 						 "values(:productId, :userId, :investNum, :status)";
 			SQLQuery sqlQuery = session.createSQLQuery(sql);

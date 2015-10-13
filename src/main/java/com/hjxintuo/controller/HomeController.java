@@ -12,17 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hjxintuo.dao.InvestRecordDAO;
 import com.hjxintuo.dao.ProductDAO;
-import com.hjxintuo.dao.UserDAO;
-import com.hjxintuo.model.InvestRecord;
 import com.hjxintuo.model.Product;
-import com.hjxintuo.model.User;
 
 
 @Controller  
 public class HomeController {
 	private Logger log = Logger.getLogger(HomeController.class);
 	private ProductDAO productDao = new ProductDAO();
-	private UserDAO userDao = new UserDAO();
 	private InvestRecordDAO investRecordDao = new InvestRecordDAO();
 	
 	@RequestMapping({"/", "/home"})

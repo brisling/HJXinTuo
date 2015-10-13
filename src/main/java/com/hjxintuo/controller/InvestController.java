@@ -1,6 +1,5 @@
 package com.hjxintuo.controller;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,7 +18,6 @@ import com.hjxintuo.dao.AccountDAO;
 import com.hjxintuo.dao.InvestRecordDAO;
 import com.hjxintuo.dao.ProductDAO;
 import com.hjxintuo.model.Account;
-import com.hjxintuo.model.InvestRecord;
 import com.hjxintuo.model.Product;
 import com.hjxintuo.model.User;
 
