@@ -1,7 +1,6 @@
 package com.hjxintuo.controller;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +17,7 @@ import com.hjxintuo.dao.AccountDAO;
 import com.hjxintuo.dao.InvestRecordDAO;
 import com.hjxintuo.dao.ProductDAO;
 import com.hjxintuo.model.Account;
+import com.hjxintuo.model.Pagination;
 import com.hjxintuo.model.Product;
 import com.hjxintuo.model.User;
 
@@ -29,14 +29,23 @@ public class InvestController {
 	private InvestRecordDAO investRecordDao = new InvestRecordDAO();
 	
 	@RequestMapping({"/invest"})
-	public String investHome(ModelMap model) {
+	public String investHome(ModelMap model, HttpServletRequest request) {
 		log.info("hello invest !");
 		
-		List<Product> productList = productDao.list();
-		model.put("productList", productList);
+		int pageIndex = 1;
+		String str = request.getParameter("page");
+		if (str != null) {
+			try {
+				pageIndex = Integer.parseInt(str);
+			} catch (NumberFormatException e) {
+				pageIndex = 1;
+			}
+		}
+		Pagination<Product> pagination = productDao.getProductsAtPageIndex(pageIndex);
+		model.put("pagination", pagination);
 		
 		return "invest/invest_home";
-	}
+	}		
 
 	@RequestMapping({"/invest/product"})
 	public String productDetail(HttpSession session, HttpServletRequest request, ModelMap model) {
@@ -47,7 +56,7 @@ public class InvestController {
 		if (id == null)
 		{
 			log.info("product id is null.");
-			return investHome(model);
+			return investHome(model, request);
 		}
 		
 		Product product = (Product)productDao.find(Product.class, new Integer(id));

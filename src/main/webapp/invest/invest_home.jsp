@@ -11,7 +11,7 @@
 	<div class="container">
 		<!-- product list -->
 		<div class="product_list">
-			<c:forEach items="${productList}" var="product">
+			<c:forEach items="${pagination.objectList}" var="product">
 				<div class="product">
 				<!-- 不同类型的产品显示不同的样式 -->
 					<c:set var="productCategory" value="xin"/>
@@ -79,6 +79,33 @@
 					</div>
 				</div>
 			</c:forEach>
+			
+			<!-- pagination -->
+			<div class="page_list_container">
+				<div class="page_list">
+					<span class="page_count">共${pagination.pageCount}页</span>
+					<c:if test="${pagination.isFirstPage == 0}" > 
+						<a class="page_prev" href="${pageContext.request.contextPath}/invest?page=${pagination.currentPage-1}">&nbsp;</a>
+					</c:if>
+					<c:forEach items="${pagination.navigatePages}" var="pageIndex">
+						<c:choose>
+							<c:when test="${pagination.currentPage == pageIndex}" >
+								<a class="page_no current_page" href="javascript:void(0)">${pageIndex}</a>
+							</c:when>
+							<c:otherwise>
+								<a class="page_no" href="${pageContext.request.contextPath}/invest?page=${pageIndex}">${pageIndex}</a>
+							</c:otherwise>
+						</c:choose>
+					</c:forEach>
+					<c:if test="${pagination.isLastPage == 0}" > 
+						<a class="page_next" href="${pageContext.request.contextPath}/invest?page=${pagination.currentPage+1}">&nbsp;</a>
+					</c:if>
+					<span class="page_text">到第</span>
+					<input class="page_input" type="text" id="goPage" value="1">
+					<span class="page_text">页</span>
+					<a class="page_button" id="jumpPage" href="${pageContext.request.contextPath}/invest">确定</a>
+				</div>
+			</div>
 		</div>
 		
 		<!-- right area -->

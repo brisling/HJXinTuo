@@ -20,5 +20,12 @@ $(document).ready(function () {
   // 设置当前导航项的颜色
   $('#index').attr("class", "");
   $('#invests').attr("class", "nav_li_focus");
+  
+  $('#jumpPage').click(function(){
+	 var pageIndex = $('#goPage').val();
+	 var url = $('#jumpPage').attr("href") + "?page=" + pageIndex;
+	 window.location.href = url;
+	 return false;
+  });
 	
 });
