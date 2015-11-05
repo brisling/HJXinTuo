@@ -135,6 +135,23 @@ public class UserController {
 		return "account/pay";
 	}
 	
+	@RequestMapping({"/withdraw"})
+	public String withdraw(HttpSession session, ModelMap model) {
+		
+		log.info("/withdraw");
+		
+		User user = (User)session.getAttribute("user"); 
+		if (user == null) {
+			log.info("please login.");
+			return "redirect:/login "; 
+		}
+		
+		Account account = accountDao.getAccountForUser(user.getId());
+		model.put("account", account);
+		
+		return "account/withdraw";
+	}
+	
 	@RequestMapping({"/register"})
 	public String register(ModelMap model) {
 		log.info("register !");

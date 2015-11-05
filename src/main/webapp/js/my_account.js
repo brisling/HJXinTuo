@@ -39,12 +39,6 @@ $(document).ready(function () {
 //  });
   
   
-  $("#withdrawButton").click(function(){
-    alert("亲，试用版不能提现哦~");
-    return false;
-  });
-  
-  
   $('#index').attr("class", "");
   $('#acountHome').attr("class", "nav_li_focus");
   

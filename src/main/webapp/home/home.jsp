@@ -21,7 +21,7 @@
 <!-- guide banner -->
 <div class="container">
 	<div class="banner2">
-		<div class="title">HJ信托&nbsp;&nbsp;稳健投资者的首选</div>
+		<div class="title">迅雷金融&nbsp;&nbsp;稳健投资者的首选</div>
 		<div class="subtitle" style="color:#78868b">资产真实性已经公证机构证实</div>
 		<div class="item">
 			<div class="i1"><a href="${pageContext.request.contextPath}/aboutUs" target="_blank"><img src="${pageContext.request.contextPath}/images/banner/icon-profit.png" /></a></div>
@@ -104,8 +104,8 @@
 <!-- gong gao -->
 <div class="gong_gao_area">
   <div class="container">
-    <div class="gong_gao_title">HJ信托公告 </div>
-    <div class="gong_gao_subtitle">信托最新资讯，行业前沿信息。</div>
+    <div class="gong_gao_title">迅雷金融公告 </div>
+    <div class="gong_gao_subtitle">金融理财最新资讯，行业前沿信息。</div>
   </div>
 </div>
 

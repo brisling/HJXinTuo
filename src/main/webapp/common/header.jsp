@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>HJ信托，稳健投资者首选</title>
+<title>迅雷金融，稳健投资者首选</title>
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/common.css" />
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.10.2.min.js"></script>
@@ -97,7 +97,7 @@
 			<span>
 				<!-- unlogin user -->
 				<c:if test="${sessionScope.user == null}">
-				<a rel="nofollow" id="login-panel" href="${pageContext.request.contextPath}/login">HJ信托欢迎您，请登录</a>&nbsp;｜&nbsp;
+				<a rel="nofollow" id="login-panel" href="${pageContext.request.contextPath}/login">迅雷金融欢迎您，请登录</a>&nbsp;｜&nbsp;
 				<a rel="nofollow" id="create-account" href="${pageContext.request.contextPath}/register" class="btn-register">注册账户</a>
 				</c:if>
 				

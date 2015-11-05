@@ -113,7 +113,7 @@
 			<!-- app 下载 -->
 			<div class="app_info">
 				<div class="header">
-					<div class="title">HJ信托APP</div>
+					<div class="title">迅雷金融APP</div>
 					<div class="more_text">随时随地轻松理财</div>
 				</div>
 				<div class="app_info_img">&nbsp;</div>

@@ -18,7 +18,7 @@
         <div class="home_nav_2_1">可用余额</div>
         <div class="home_nav_2_2"><fmt:formatNumber maxFractionDigits="2" minFractionDigits="2" value="${account.balance}" /></div>
         <a class="button button_recharge" id="rechargeButton" href="${pageContext.request.contextPath}/recharge">充&nbsp;&nbsp;&nbsp;值</a>
-        <a class="button button_withdraw" id="withdrawButton">提&nbsp;&nbsp;&nbsp;现</a>
+        <a class="button button_withdraw" id="withdrawButton" href="${pageContext.request.contextPath}/withdraw">提&nbsp;&nbsp;&nbsp;现</a>
       </div>
       <div class="home_nav_3">
         <ul class="home_nav_3_list">
