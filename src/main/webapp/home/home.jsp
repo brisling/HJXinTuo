@@ -13,7 +13,7 @@
 			<div class="i2">6%-12%</div>
 			<div class="i3">挂钩信托&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;刚性兑付</div>
 			<div class="i4"><a href="${pageContext.request.contextPath}/register"><button  class="button button-hover">立即注册</button></a></div>
-			<div class="i5"><a href="/login">已有账号？立即登录</a></div>
+			<div class="i5"><a href="${pageContext.request.contextPath}/login">已有账号？立即登录</a></div>
 		</div>
 	</div>
 </div>
