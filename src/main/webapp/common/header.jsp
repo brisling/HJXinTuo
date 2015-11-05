@@ -29,7 +29,7 @@
 				<!-- 弹出框 -->
 				<div class="top_bar_weixin_btn_box" style="display: none;">
 					<em class="top_bar_btn_box_arrow"></em>
-					<p class="top_bar_btn_box_title">HJ信托微信号：xintuo</p>
+					<p class="top_bar_btn_box_title">迅雷金融微信号：xunlei</p>
 					<div class="pic_box">
 						<img src="${pageContext.request.contextPath}/images/common/wx2wm.jpg" class="top_bar_btn_box_img" alt="信托微信号" />
 					</div>
