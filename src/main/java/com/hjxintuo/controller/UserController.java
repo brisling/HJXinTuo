@@ -99,23 +99,40 @@ public class UserController {
 		return "account/my_account";
 	}
 	
+//	@RequestMapping({"/recharge"})
+//	@ResponseBody
+//	public Map<String, Object> recharge(HttpSession session, HttpServletRequest request) {
+//		
+//		Map<String, Object> data = new HashMap<String, Object>();
+//		
+//		User user = (User)session.getAttribute("user"); 
+//		if (user == null) {
+//			data.put("msg", "please login again !");
+//			data.put("redirectUrl", request.getContextPath()+"/login/");
+//			return data;
+//		}
+//		
+//		accountDao.recharge(user.getId(), 5000);
+//		data.put("msg", "试用版，成功充值5000元");
+//		data.put("redirectUrl", request.getContextPath()+"/account/");
+//		return data;
+//	}
+	
 	@RequestMapping({"/recharge"})
-	@ResponseBody
-	public Map<String, Object> recharge(HttpSession session, HttpServletRequest request) {
+	public String recharge(HttpSession session, ModelMap model) {
 		
-		Map<String, Object> data = new HashMap<String, Object>();
+		log.info("/recharge");
 		
 		User user = (User)session.getAttribute("user"); 
 		if (user == null) {
-			data.put("msg", "please login again !");
-			data.put("redirectUrl", request.getContextPath()+"/login/");
-			return data;
+			log.info("please login.");
+			return "redirect:/login "; 
 		}
 		
-		accountDao.recharge(user.getId(), 5000);
-		data.put("msg", "试用版，成功充值5000元");
-		data.put("redirectUrl", request.getContextPath()+"/account/");
-		return data;
+		Account account = accountDao.getAccountForUser(user.getId());
+		model.put("account", account);
+		
+		return "account/pay";
 	}
 	
 	@RequestMapping({"/register"})

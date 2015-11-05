@@ -12,7 +12,7 @@ public class AccountDAO extends BaseDAO<Account> {
 	public void openAccountForUser(Integer userId) {
 		Account account = new Account();
 		account.setUserId(userId);
-		account.setBalance(0);
+		account.setBalance(20000);     // 测试，注册就送20,000
 		account.setDateCreated(new Date());
 		create(account);
 	}
